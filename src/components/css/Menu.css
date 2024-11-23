@@ -1,0 +1,81 @@
+header {
+   margin-bottom: 57px;
+}
+
+nav {
+   position: fixed;
+   width: 100%;
+   background-color: #333;
+   height: 57px;
+   z-index: 99999;
+}
+
+ul {
+   width: 1200px;
+   margin: 0 auto;
+   list-style-type: none;
+   display: flex;
+   /* Flexbox 사용 */
+   justify-content: space-between;
+   /* 양 끝으로 정렬 */
+   align-items: center;
+   /* 세로 정렬 */
+   padding: 0;
+}
+
+.left-menu {
+   display: flex;
+   /* 왼쪽 메뉴 정렬 */
+   align-items: center;
+   gap: 10px;
+   /* 아이템 간격 */
+}
+
+.right-menu {
+   display: flex;
+   /* 오른쪽 메뉴 정렬 */
+   align-items: center;
+   gap: 10px;
+   /* select와 로그인 간격 */
+}
+
+li {
+   list-style: none;
+}
+
+li a {
+   display: block;
+   color: white;
+   text-align: center;
+   padding: 16.3px 20px;
+   text-decoration: none;
+}
+
+li:not(:first-child) a:hover:not(.active) {
+   background-color: #4d4c4c;
+}
+
+.right-selects {
+   display: flex;
+   gap: 10px;
+   /* select 태그 사이 간격 */
+}
+
+.right-selects select {
+   padding: 5px;
+   background-color: #444;
+   color: white;
+   border: none;
+   border-radius: 4px;
+}
+
+.login {
+   background-color: #448ada;
+}
+
+.login a {
+   color: white;
+   padding: 16.3px 20px;
+   text-decoration: none;
+   font-weight: bold;
+}
