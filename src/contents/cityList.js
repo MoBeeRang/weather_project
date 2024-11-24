@@ -2,7 +2,7 @@
 export const CITYLIST = [
     {
     "id": 1843564,
-    "kor_name": "인천광역시",
+    "kor_name": "인천",
     "eng_name": "Incheon",
     "coord": {
       "lon": 126.731667,
@@ -11,7 +11,7 @@ export const CITYLIST = [
   },
   {
     "id": 1835848,
-    "kor_name": "서울특별시",
+    "kor_name": "서울",
     "eng_name": "Seoul",
     "coord": {
       "lon": 126.977829,
@@ -29,7 +29,7 @@ export const CITYLIST = [
   },
   {
     "id": 1835235,
-    "kor_name": "대전광역시",
+    "kor_name": "대전",
     "eng_name": "Daejeon",
     "coord": {
       "lon": 127.419724,

@@ -1,17 +1,15 @@
 import React, { useState, useEffect } from 'react';
-import { useDispatch } from 'react-redux';
-import { fetchSearchWeather, ENDPOINTS } from '../features/weather/weatherSlice';
+import { useDispatch ,useSelector} from 'react-redux';
+import { fetchSearchWeather, ENDPOINTS,selectCity } from '../features/weather/weatherSlice';
 import cityList from '../contents/cityList'
 
 function MenuSelector() {
   const dispatch = useDispatch();
-  const [selectedCity, setSelectedCity] = useState(cityList[0].code); // 기본값: 첫 번째 도시
-
-  useEffect(() => {
-    if (selectedCity) {
-      dispatch(fetchSearchWeather({endpoint: ENDPOINTS.WEATHER, cityCode: selectedCity}));
-    }
-  }, [selectedCity, dispatch]);
+  const { selectedCity } = useSelector((state) => state.weather)
+  
+  const setSelectedCity = (e) => {
+    dispatch(selectCity(e))
+  }
 
   return (
     <div>

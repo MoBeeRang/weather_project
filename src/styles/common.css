@@ -1,9 +1,18 @@
+
 *,
 body {
+   background-color: var(--skyblue-color);
    margin: 0;
    padding: 0;
 }
-
+select{
+   -webkit-appearance: none;
+   /* Chrome, Safari, Edge 제거 */
+   -moz-appearance: none;
+   /* Firefox 제거 */
+   appearance: none;
+   /* 표준 */
+}
 .common_margin_tb {
    margin-top: 40px;
    margin-bottom: 40px;
@@ -12,3 +21,14 @@ body {
 .common_margin_b {
    margin-bottom: 30px;
 }
+
+
+:root {
+   --primary-color: #3498db;
+   --secondary-color: #2ecc71;
+   --skyblue-color: #8f9fb6;
+   --skyhighlight-color: #c1c7cf;
+   --skyhighlight-hover-color: #97b0ce;
+   --skyhighlight-dark-color: #445b77;
+}
+

@@ -10,7 +10,7 @@ export const Main = styled.main`
    overflow: hidden;
    padding: ${(props) => props.$padding || 0};
    min-height: ${(props) => props.$height+'px' || '500px'}; /* 세로 높이 조정 */
-   background-color: grey;
+   background-color: var(--skyblue-color);
 `
 // export const ImageContainer = styled.div`
 //    min-height:500px;

@@ -8,8 +8,8 @@ function Menu() {
             <ul>
                <div className="left-menu">
                   <li>
-                     <NavLink to="/" style={{ padding: '11px 30px' }}>
-                        <img src="/images/logo1.png" alt="날씨별 옷차림" width="50" />
+                     <NavLink to="/" className="logo-link">
+                        <img src="/images/logo1.png" alt="날씨별 옷차림" width="50"/>
                      </NavLink>
                   </li>
                   <li>

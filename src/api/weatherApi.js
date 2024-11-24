@@ -16,11 +16,12 @@ const weatherApi = axios.create({
     },
 })
 
-export const searchWeather = async (endpoint = 'weather', params = {q:'incheon'}) => {
-    //  https://api.openweathermap.org/data/2.5/weather?q={city name}&appid={API key}
-    //  https://api.openweathermap.org/data/2.5/forecast?q={city name}&appid={API key}
+export const searchWeather = async (endpoint = 'weather', param = 1843564) => {
+    //  https://api.openweathermap.org/data/2.5/weather?id={city id}&appid={API key}
+    //  https://api.openweathermap.org/data/2.5/forecast?id={city id}&appid={API key}
     try {
-        const response = await weatherApi.get(`/${endpoint}`, { params });
+        let city = { id: param }
+        const response = await weatherApi.get(`/${endpoint}`, { params: city });
         return response.data;
     } catch (error) {
         console.error('Error fetching weather data:', error);

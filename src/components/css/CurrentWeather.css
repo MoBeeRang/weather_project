@@ -1,0 +1,39 @@
+/* 창문 전체 컨테이너 */
+.window-container {
+    width: 300px;
+    height: 400px;
+}
+
+/* 창문 틀 백그라운드 이미지*/
+.window-frame {
+    box-sizing: border-box;
+    display: flex;
+    width: 300px;
+    height: 400px;
+    background-size: cover;
+    background-position: center;
+    padding: 20px;
+    box-shadow: 
+        inset 2px 3px 10px rgba(0, 0, 0, 0.5);
+}
+
+
+/* 컨트롤 버튼 */
+.controls {
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+}
+
+.controls button {
+    padding: 5px 10px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.controls button:hover {
+    background-color: #2980b9;
+}

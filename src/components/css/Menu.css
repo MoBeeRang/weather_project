@@ -5,38 +5,35 @@ header {
 nav {
    position: fixed;
    width: 100%;
-   background-color: #333;
+   background-color: var(--skyblue-color);
    height: 57px;
    z-index: 99999;
+   border-bottom: var(--skyhighlight-color) solid 1px;
 }
 
 ul {
+   height: 100%;
    width: 1200px;
    margin: 0 auto;
    list-style-type: none;
    display: flex;
-   /* Flexbox 사용 */
    justify-content: space-between;
-   /* 양 끝으로 정렬 */
    align-items: center;
-   /* 세로 정렬 */
    padding: 0;
 }
 
 .left-menu {
+   max-height: 57px;
+   display: block;
    display: flex;
-   /* 왼쪽 메뉴 정렬 */
    align-items: center;
    gap: 10px;
-   /* 아이템 간격 */
 }
 
 .right-menu {
    display: flex;
-   /* 오른쪽 메뉴 정렬 */
    align-items: center;
    gap: 10px;
-   /* select와 로그인 간격 */
 }
 
 li {
@@ -47,26 +44,32 @@ li a {
    display: block;
    color: white;
    text-align: center;
-   padding: 16.3px 20px;
+   padding: 10px 20px;
    text-decoration: none;
 }
 
+li .active:not(.logo-link){
+   border-radius: 5px;
+   background-color: var(--skyhighlight-hover-color);
+   border: var(--skyhighlight-color) solid 1px;
+}
+
 li:not(:first-child) a:hover:not(.active) {
-   background-color: #4d4c4c;
+   border-radius: 5px;
+   background-color: var(--skyhighlight-hover-color);
 }
 
 .right-selects {
    display: flex;
    gap: 10px;
-   /* select 태그 사이 간격 */
 }
 
 .right-selects select {
-   padding: 5px;
-   background-color: #444;
+   padding: 10px 20px;
+   background-color: var(--skyhighlight-dark-color);
    color: white;
-   border: none;
-   border-radius: 4px;
+   border: var(--skyhighlight-dark-color) solid 1px;
+   border-radius: 5px;
 }
 
 .login {
@@ -78,4 +81,20 @@ li:not(:first-child) a:hover:not(.active) {
    padding: 16.3px 20px;
    text-decoration: none;
    font-weight: bold;
+}
+
+.logo-link {
+   display: flex;
+   align-items: center;
+   gap: 10px;
+   padding: 0;
+}
+
+.logo-link img {
+   max-height: 50px;
+}
+
+.logo-link .logo-text {
+   color: white;
+   font-size: 16px;
 }
