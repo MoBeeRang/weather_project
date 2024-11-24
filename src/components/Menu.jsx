@@ -1,5 +1,6 @@
 import './css/Menu.css'
 import { NavLink } from 'react-router-dom'
+import MenuSelector from './MenuSelector';
 function Menu() {
    return (
       <header>
@@ -15,25 +16,13 @@ function Menu() {
                      <NavLink to="/">오늘의 날씨</NavLink>
                   </li>
                   <li>
-                     <NavLink to="/forecast">5일간 날씨</NavLink>
+                     <NavLink to="/day5">5일간 날씨</NavLink>
                   </li>
+                  {/* <li> <NavLink to="/download">파일 변환</NavLink></li> */}
                </div>
                <div className="right-menu">
                   <li className="right-selects">
-                     <select>
-                        <option value="incheon">인천</option>
-                        <option value="seoul">서울</option>
-                     </select>
-                     <select>
-                        <option value="1130">11월30일</option>
-                        <option value="1131">11월31일</option>
-                        <option value="1201">12월1일</option>
-                     </select>
-                     <select>
-                        <option value="0600">아침(6시)</option>
-                        <option value="1200">점심(정오)</option>
-                        <option value="1800">오후(18시)</option>
-                     </select>
+                     <MenuSelector/>
                   </li>
                   <li className="login">
                      <NavLink to="/login">로그인</NavLink>

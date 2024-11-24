@@ -10,3 +10,11 @@ footer > p {
    text-align: center;
    font-weight: bold;
 }
+
+a {
+   display: block;
+   color: white;
+   text-align: center;
+   padding: 16.3px 20px;
+   text-decoration: none;
+}
