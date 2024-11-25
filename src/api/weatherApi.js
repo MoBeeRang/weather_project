@@ -16,12 +16,10 @@ const weatherApi = axios.create({
     },
 })
 
-export const searchWeather = async (endpoint = 'weather', param = 1843564) => {
-    //  https://api.openweathermap.org/data/2.5/weather?id={city id}&appid={API key}
-    //  https://api.openweathermap.org/data/2.5/forecast?id={city id}&appid={API key}
+export const getSearchWeather = async (endpoint = 'weather', id = 1843564) => {
     try {
-        let city = { id: param }
-        const response = await weatherApi.get(`/${endpoint}`, { params: city });
+        let params = { id }
+        const response = await weatherApi.get(`/${endpoint}`, { params })
         return response.data;
     } catch (error) {
         console.error('Error fetching weather data:', error);
