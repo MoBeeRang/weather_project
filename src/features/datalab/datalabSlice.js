@@ -1,5 +1,5 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
-import { postShoppingSerch } from '../../api/datalabApi'
+import { postSearchShopping } from '../../api/datalabApi.js'
 
 // 초기 파라미터 상태
 const initialParams = {
@@ -16,7 +16,8 @@ const initialParams = {
 
 export const fetchSearchShopping = createAsyncThunk('datalab/fetchSearchShopping', async (_, { getState }) => {
         const { params } = getState().datalab;
-        const response = await postShoppingSerch(params);
+    const response = await postSearchShopping(params);
+    console.log(response)
         return response;
 })
 

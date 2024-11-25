@@ -7,18 +7,17 @@ import 'swiper/css/scrollbar'
 import { Autoplay, Scrollbar } from 'swiper/modules'
 
 import { useDispatch, useSelector } from 'react-redux'
-// import { fetchSearchMovieCredit } from '../../features/movies/moviesSlice'
-// import { useParams } from 'react-router-dom'
+import { fetchSearchShopping } from '../../features/datalab/datalabSlice'
 
 function Closet() {
-//    const { movieId } = useParams()
-//    const dispatch = useDispatch(fetchSearchMovieCredit())
-//    const { movieCredit, loading, error } = useSelector((state) => state.movies)
-//    useEffect(() => {
-//       if (movieId) dispatch(fetchSearchMovieCredit(movieId))
-//    }, [dispatch, movieId])
-//    if (loading) return <p>loading중..</p>
-//    if (error) return <p>error: {error}</p>
+   const dispatch = useDispatch()
+   const { searchResults,loading, error } = useSelector((state) => state.datalab)
+   useEffect(() => { 
+      dispatch(fetchSearchShopping())
+   }, [])
+
+   if(loading)return<p>loading</p>
+   if (error) return<p>error:{ error}</p>
     return (
       <div className="common_margin_tb">
          <Swiper
@@ -34,42 +33,14 @@ function Closet() {
                disableOnInteraction: false,
             }}
          >
-            <SwiperSlide key='157658657567'>
-                <div style={{ padding: 20 }}>
-                <img src={'/images/logo1.png'} alt='설명' />
-                <p style={{ fontWeight: 'bold' }}>옷</p>
-                </div>
-            </SwiperSlide>
-            <SwiperSlide key='123234234233'>
-                <div style={{ padding: 20 }}>
-                <img src={'/images/logo.png'} alt='설명' />
-                <p style={{ fontWeight: 'bold' }}>옷</p>
-                </div>
-                </SwiperSlide>      
-                       <SwiperSlide key='1231'>
-                <div style={{ padding: 20 }}>
-                <img src={'/images/logo1.png'} alt='설명' />
-                <p style={{ fontWeight: 'bold' }}>옷</p>
-                </div>
-            </SwiperSlide>
-            <SwiperSlide key='12323433'>
-                <div style={{ padding: 20 }}>
-                <img src={'/images/logo.png'} alt='설명' />
-                <p style={{ fontWeight: 'bold' }}>옷</p>
-                </div>
-                </SwiperSlide>
-                       <SwiperSlide key='1256765731'>
-                <div style={{ padding: 20 }}>
-                <img src={'/images/logo1.png'} alt='설명' />
-                <p style={{ fontWeight: 'bold' }}>옷</p>
-                </div>
-            </SwiperSlide>
-            <SwiperSlide key='315675623'>
-                <div style={{ padding: 20 }}>
-                <img src={'/images/logo.png'} alt='설명' />
-                <p style={{ fontWeight: 'bold' }}>옷</p>
-                </div>
-            </SwiperSlide>    
+         {/* {searchResults &&
+            searchResults.map((item) => (
+               <SwiperSlide key={item.category}>
+                  <div style={{ padding: 20 }}>
+                     <p style={{ fontWeight: 'bold' }}>{item.title}</p>
+                  </div>
+               </SwiperSlide>
+            ))} */}
          </Swiper>
       </div>
    )
