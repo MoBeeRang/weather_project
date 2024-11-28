@@ -1,25 +1,8 @@
 import './css/CurrentWeather.css'
-import { useEffect, useState } from 'react';
-import { fetchSearchWeather,ENDPOINTS, selectCity} from '../features/weather/weatherSlice'; 
-import { useDispatch, useSelector } from 'react-redux';
 
 //오늘 날씨정보를 가져오고, 내용을 출력하기
 
-function CurrentWeather() {
-  const dispatch = useDispatch()
-  const { searchResults, loading, error, selectedCity } = useSelector((state) => state.weather)
-
-  const [weatherImage, setWeatherImage] = useState('/images/clear.png'); // 기본 날씨 이미지
-
-  useEffect(() => {
-    console.log('selectedCity')
-    console.log(selectedCity)
-    dispatch(fetchSearchWeather({ endpoint: ENDPOINTS.WEATHER, id: selectedCity }))
-    
-  }, [dispatch, selectedCity])
-
-  if(loading)return<p>loading</p>
-  if (error) return<p>error:{ error}</p>
+function CurrentWeather({ searchResults }) {
   
   return (
     <>
