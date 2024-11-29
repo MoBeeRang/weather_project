@@ -1,9 +1,13 @@
 
 *,
 body {
-   background-color: var(--skyblue-color);
+   letter-spacing: 0.2em;
    margin: 0;
    padding: 0;
+}
+
+body{
+   background-color: var(--skyblue-color);
 }
 select{
    -webkit-appearance: none;
@@ -21,7 +25,6 @@ select{
 .common_margin_b {
    margin-bottom: 30px;
 }
-
 
 :root {
    --primary-color: #3498db;

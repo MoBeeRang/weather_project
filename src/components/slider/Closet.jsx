@@ -3,10 +3,15 @@ import 'swiper/css'
 import '../css/Closet.css'
 import 'swiper/css/scrollbar'
 import { Autoplay, Scrollbar } from 'swiper/modules'
-function Closet({ searchResults }) {
-
+function Closet({ closetResult }) {
+   let uniqueClosetResult = []
+   if (closetResult.length>0) {
+      uniqueClosetResult = Array.from(
+          new Map(closetResult.map(item => [item.title, item])).values()
+      ).slice(0, 5);
+   }
     return (
-      <div className="common_margin_tb">
+       <div className="common_margin_tb">
          <Swiper
             slidesPerView={3}
             spaceBetween={30} //margin-right:30px
@@ -20,16 +25,18 @@ function Closet({ searchResults }) {
                disableOnInteraction: false,
             }}
           >
-             { searchResults}
-         {/* { {searchResults.items.size > 1 &&
-            searchResults.items.map((item) => (
-               <SwiperSlide key={item.category}>
+         {  uniqueClosetResult.length > 0  &&
+            uniqueClosetResult.map((item) => (
+               <SwiperSlide key={item.title}>
                   <div style={{ padding: 20 }}>
+                     <img src={item.image.thumbnailLink ? `${item.image.thumbnailLink}` : '/images/clear.png'} alt={item.title} />
                      <p style={{ fontWeight: 'bold' }}>{item.title}</p>
                   </div>
                </SwiperSlide>
-            ))} } */}
-         </Swiper>
+            ))}
+            
+          </Swiper>
+           
       </div>
    )
 }

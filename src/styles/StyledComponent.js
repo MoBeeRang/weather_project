@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import Particles from 'react-tsparticles';
 export const Wrap = styled.div`
    overflow: hidden;
    min-width: ${(props) => props.$minWidth || '1200px'};
@@ -28,3 +29,6 @@ export const ResponsiveImage = styled.img`
  height:100%;
 
 `;
+export const WrapedParticles = styled(Particles)`
+   background-image: url(${(props)=>props.$backgroundImage});
+`

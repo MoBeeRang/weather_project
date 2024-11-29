@@ -1,13 +1,18 @@
 .swiper {
+   user-select: none;
+   /* 텍스트 선택 방지 */
+   -webkit-user-select: none;
+   /* 크롬, 사파리 */
+   -ms-user-select: none;
+   /* 인터넷 익스플로러 */
    width: 100%;
-   height: 300px;
-   margin-top: 20px 0;
+   height: 400px;
 }
 
 .swiper-slide {
    text-align: center;
    font-size: 18px;
-   background: #fff;
+   /* background: #fff; */
 
    /* Center slide text vertically */
    display: flex;

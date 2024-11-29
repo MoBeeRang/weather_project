@@ -5,7 +5,8 @@ import { getClothingKeyword} from '../../utils/weatherKeywords.js'
 export const fetchSearchImages = createAsyncThunk('scj/fetchSearchImages', async (temperature) => {
    const keyword = getClothingKeyword(temperature)
     const response = await getSearchImages(keyword)
-    console.log(response)
+      // console.log("closetApi");
+      // console.log(response);
     return response
 })
 
@@ -14,7 +15,7 @@ const closetSlice = createSlice({
    initialState: {
         loading: false,
         error: null,
-        searchResults: null,
+        searchResults: [],
    },
     reducers: {},
    extraReducers: (builder) => {
@@ -29,7 +30,12 @@ const closetSlice = createSlice({
          })
          .addCase(fetchSearchImages.rejected, (state, action) => {
             state.loading = false
-            state.error = action.error.message
+            if (action.error.message == "Request failed with status code 429") {
+               state.searchResults = []
+               state.error = null
+            } else {
+               state.error = action.error.message
+            }
          })
    },
 })

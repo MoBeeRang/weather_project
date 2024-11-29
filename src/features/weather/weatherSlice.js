@@ -8,7 +8,7 @@ export const ENDPOINTS = {
 
 export const fetchSearchWeather = createAsyncThunk('weather/fetchSearchWeather', async ({ endpoint, id }) => {
    const response = await getSearchWeather(endpoint, id)
-   console.log(response)
+   // console.log(response)
    return response
 })
 
@@ -22,7 +22,7 @@ const weatherSlice = createSlice({
    },
    reducers: {
       selectCity(state, action) { 
-      console.log(action.payload)
+      // console.log(action.payload)
       state.selectedCity = action.payload
    } },
    extraReducers: (builder) => {
