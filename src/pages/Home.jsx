@@ -16,7 +16,7 @@ function Home() {
    const height = useHeight(57, 100)
 
    const dispatch = useDispatch();
-   const { searchResults: weatherResult, loading: weatherLoading, error: weatherError, selectedCity } = useSelector((state) => state.weather);
+   const { searchResults: weatherResult, loading: weatherLoading, error: weatherError, selectedCity, selectedPreset } = useSelector((state) => state.weather);
    const { searchResults: closetResult, loading: closetLoading, error: closetError } = useSelector((state) => state.closet);
 
   useEffect(() => {
@@ -31,7 +31,7 @@ function Home() {
         // weatherResult.main.temp를 이용하여 이미지 검색
         dispatch(fetchSearchImages(weatherResult.main.temp));
     }
-   }, [dispatch, weatherResult])
+   }, [dispatch, weatherResult,selectedPreset])
 
   if ( weatherLoading || closetLoading ) return <p>loading</p>
   if ( weatherError ) return <p>error:{ weatherError }</p>

@@ -1,6 +1,6 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
 import { getSearchWeather } from '../../api/weatherApi'
-
+import { resultPreset } from '../../contents/resultPreset'
 export const ENDPOINTS = {
   WEATHER: 'weather', //오늘날씨
   FORECAST: 'forecast', //5일날씨
@@ -18,13 +18,23 @@ const weatherSlice = createSlice({
       loading: false,
       error: null,
       searchResults: null,
+      selectedPreset: null,
       selectedCity: 1843564,
    },
    reducers: {
       selectCity(state, action) { 
-      // console.log(action.payload)
-      state.selectedCity = action.payload
-   } },
+         // console.log(action.payload)
+         state.selectedCity = action.payload
+      },
+      selectPreset(state, action) { 
+         console.log("selectPreset", action.payload)
+         if (action.payload == "reset") {
+            state.selectedPreset = null
+         } else {
+            state.selectedPreset = resultPreset[action.payload]
+         }
+         // state.searchResults = action.payload
+      } },
    extraReducers: (builder) => {
       builder
          .addCase(fetchSearchWeather.pending, (state) => {
@@ -42,5 +52,5 @@ const weatherSlice = createSlice({
    },
 })
 
-export const { selectCity } = weatherSlice.actions
+export const { selectCity,selectPreset } = weatherSlice.actions
 export default weatherSlice.reducer
