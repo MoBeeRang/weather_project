@@ -24,7 +24,9 @@ function Home() {
    }, [dispatch, selectedCity])
 
    useEffect(() => {
-      if (weatherResult && weatherResult.main) {
+      if (selectedPreset) {
+         dispatch(fetchSearchImages(selectedPreset.main.temp))
+      } else if (weatherResult && weatherResult.main) {
          // weatherResult와 main이 존재하는지 확인
          console.log('weatherResult:', weatherResult)
          console.log('Temperature:', weatherResult.main.temp)
