@@ -1,6 +1,6 @@
 import './css/Menu.css'
 import { NavLink } from 'react-router-dom'
-import MenuSelector from './MenuSelector';
+import MenuSelector from './MenuSelector'
 function Menu() {
    return (
       <header>
@@ -9,7 +9,7 @@ function Menu() {
                <div className="left-menu">
                   <li>
                      <NavLink to="/" className="logo-link">
-                        <img src="/images/logo1.png" alt="날씨별 옷차림" width="50"/>
+                        <img src="/images/logo1.png" alt="날씨별 옷차림" width="50" />
                      </NavLink>
                   </li>
                   <li>
@@ -22,11 +22,11 @@ function Menu() {
                </div>
                <div className="right-menu">
                   <li className="right-selects">
-                     <MenuSelector/>
+                     <MenuSelector />
                   </li>
-                  <li className="login">
+                  {/* <li className="login">
                      <NavLink to="/login">로그인</NavLink>
-                  </li>
+                  </li> */}
                </div>
             </ul>
          </nav>

@@ -9,6 +9,7 @@ import { Navigation } from 'swiper/modules'
 import { useEffect, useState, useRef } from 'react'
 import 'swiper/css'
 import '../css/day5Weather.css'
+import { getTemperatureColor } from '../../utils/temperatureColor'
 function Day5Weather({ searchResults }) {
    const [weatherList, setWeatherList] = useState([])
    const [indexNum, setIndexNum] = useState(0)
@@ -79,6 +80,15 @@ function Day5Weather({ searchResults }) {
                      <SwiperSlide key={item.dt} className="day5-swiper-slide">
                         <div style={{ padding: 20 }}>
                            <img src={item.weather[0].icon ? `https://openweathermap.org/img/wn/${item.weather[0].icon.replace(/n/g, 'd')}@4x.png` : 'https://openweathermap.org/img/wn/10d@2x.png'} alt={item.weather[0].description} />
+                           <div className="temp-text">
+                              <div style={{ fontWeight: 'bold' }}>{item.main.temp}°C </div>
+                              <div
+                                 className="day5-temp-dot"
+                                 style={{
+                                    backgroundColor: `${getTemperatureColor(item.main.temp)}`,
+                                 }}
+                              ></div>
+                           </div>
                            <p style={{ fontWeight: 'bold' }}>{item.dt_txt.split(' ')[1]}</p>
                         </div>
                      </SwiperSlide>
