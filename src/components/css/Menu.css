@@ -48,7 +48,7 @@ li a {
    text-decoration: none;
 }
 
-li .active:not(.logo-link){
+li .active:not(.logo-link) {
    border-radius: 5px;
    background-color: var(--skyhighlight-hover-color);
    border: var(--skyhighlight-color) solid 1px;
@@ -69,6 +69,7 @@ li:not(:first-child) a:hover:not(.active) {
    background-color: var(--skyhighlight-dark-color);
    color: white;
    border: var(--skyhighlight-dark-color) solid 1px;
+
    border-radius: 5px;
 }
 
