@@ -9,7 +9,9 @@ import axios from 'axios'
 const API_KEY = 'AIzaSyC7Qw-PGMMMihLo04T19hL4P3l8wJB5-XI'
 // const CX_PINTEREST = 'f18b8c3faba0d4afe'
 // const CX_COOPANG = 'f18b8c3faba0d4afe'
-const CX_ALL = '91e11416ddc3c4a96'
+// const CX_ALL = '91e11416ddc3c4a96'
+const CX_MIXED = '436fde1a18c744cc9'
+// const CX_STYLENANDA = 'e20652023ca2140da'
 const BASE_URL = 'https://www.googleapis.com/customsearch/v1'
 
 const closetApi = axios.create({
@@ -19,7 +21,7 @@ const closetApi = axios.create({
    },
    params: {
       key: API_KEY,
-      cx: CX_ALL,
+      cx: CX_MIXED,
       searchType: 'image', // 이미지 검색 활성화
       num: 10,
    },

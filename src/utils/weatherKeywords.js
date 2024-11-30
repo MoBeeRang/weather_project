@@ -2,7 +2,7 @@ export const getClothingKeyword = (temperature) => {
    if (temperature < 4) {
       return '패딩 겨울코트 목도리'
    } else if (temperature >= 4 && temperature <= 8) {
-      return '히트텍'
+      return '울코트 히트텍 가죽옷'
    } else if (temperature > 8 && temperature <= 11) {
       return '트렌치코트 야상 점퍼'
    } else if (temperature > 11 && temperature <= 16) {
