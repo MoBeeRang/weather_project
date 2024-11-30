@@ -6,9 +6,9 @@ import axios from 'axios'
 // const CX_PINTEREST = '7307d0ce089ae47ca'
 
 //부계정
-const API_KEY = 'AIzaSyCrdwOCObSlYy940Q7Z_LpHEGfSpNaPjeY'
+const API_KEY = 'AIzaSyC7Qw-PGMMMihLo04T19hL4P3l8wJB5-XI'
 const CX_PINTEREST = 'f18b8c3faba0d4afe'
-
+const CX_COOPANG = 'f18b8c3faba0d4afe'
 const BASE_URL = 'https://www.googleapis.com/customsearch/v1'
 
 const closetApi = axios.create({
