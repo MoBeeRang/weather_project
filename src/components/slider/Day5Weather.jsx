@@ -78,7 +78,7 @@ function Day5Weather({ searchResults }) {
                   {weatherList[indexNum].data.map((item) => (
                      <SwiperSlide key={item.dt} className="day5-swiper-slide">
                         <div style={{ padding: 20 }}>
-                           <img src={item.weather[0].icon ? `https://openweathermap.org/img/wn/${item.weather[0].icon}@4x.png` : 'https://openweathermap.org/img/wn/10d@2x.png'} alt={item.weather[0].description} />
+                           <img src={item.weather[0].icon ? `https://openweathermap.org/img/wn/${item.weather[0].icon.replace(/n/g, 'd')}@4x.png` : 'https://openweathermap.org/img/wn/10d@2x.png'} alt={item.weather[0].description} />
                            <p style={{ fontWeight: 'bold' }}>{item.dt_txt.split(' ')[1]}</p>
                         </div>
                      </SwiperSlide>
