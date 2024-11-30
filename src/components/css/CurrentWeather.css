@@ -1,88 +1,111 @@
 /* 창문 전체 컨테이너 */
 .window-container {
-    width: 300px;
-    height: 400px;
-    border: 1px solid #000;
-    /* 확인용 테두리 */
-    position: relative;
-    overflow: hidden;
-    /* 입자가 밖으로 나가지 않게 설정 */
+   width: 300px;
+   height: 400px;
+   border: 1px solid #000;
+   /* 확인용 테두리 */
+   position: relative;
+   overflow: hidden;
+   /* 입자가 밖으로 나가지 않게 설정 */
 }
 
 /* 창문 틀*/
 .window-frame {
-    position: absolute;
-    top:0;
-    box-sizing: border-box;
-    display: flex;
-    width: 300px;
-    height: 400px;
-    background-size: cover;
-    background-position: center;
-    padding: 20px;
-    box-shadow: 
-        inset 2px 3px 10px rgba(0, 0, 0, 0.5);
+   position: absolute;
+   top: 0;
+   box-sizing: border-box;
+   display: flex;
+   width: 300px;
+   height: 400px;
+   background-size: cover;
+   background-position: center;
+   padding: 20px;
+   box-shadow: inset 2px 3px 10px rgba(0, 0, 0, 0.5);
 }
 
 /* 창문 유리*/
-.window-glass{
-    position: absolute;
-    top: 0;
-    width: 300px;
-    height: 400px;
-    background-image: linear-gradient(180deg, rgba(0, 0, 0, 0), rgb(0, 0, 0, 0.5));
+.window-glass {
+   position: absolute;
+   top: 0;
+   width: 300px;
+   height: 400px;
+   background-image: linear-gradient(180deg, rgba(0, 0, 0, 0), rgb(0, 0, 0, 0.5));
 }
 /* 창문 유리*/
-.window-glass.cloudy{
-    background-image: linear-gradient(180deg, rgb(131 131 131 / 93%), rgb(69 69 69 / 81%));
+.window-glass.cloudy {
+   background-image: linear-gradient(180deg, rgb(131 131 131 / 93%), rgb(69 69 69 / 81%));
 }
-/* 컨트롤 버튼 */
-.controls {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    display: flex;
-    gap: 10px;
-}
-
-.controls button {
-    padding: 5px 10px;
-    background-color: #a8adb1;
-    opacity: 0.5;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
+/* 창문 컨트롤 버튼 */
+.window-container .controls {
+   position: absolute;
+   top: 10px;
+   left: 10px;
+   display: flex;
+   gap: 10px;
 }
 
-.controls button:hover {
-    background-color: #6e777e;
+.window-container .controls button {
+   padding: 5px 10px;
+   background-color: #a8adb1;
+   opacity: 0.5;
+   color: white;
+   border: none;
+   border-radius: 4px;
+   cursor: pointer;
 }
 
-#tsparticles{
-    width: 300px;
-    height: 400px;
+.window-container .controls button:hover {
+   background-color: #6e777e;
 }
-.text-conts{
-    width: 100%;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: flex-end;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 1);
-}
-.text-conts>div{
-    height: 30px;
-    display: flex;
-    align-items: center;
-}
-.text-conts .text-area{
-    color:white;
-    padding-bottom: 2px;
-}
-.temp-dot{
-    width: 30px;
-    height: 20px;
-    border-radius: 10px;
-    box-shadow: 1px 1px 2px rgba(0, 0, 0, 1);
 
+/* day5 컨트롤 버튼 */
+.day5-container .controls {
+   display: flex;
+   gap: 10px;
+   justify-content: space-evenly;
+}
+
+.day5-container .controls button {
+   padding: 5px 10px;
+   background-color: #6e777e;
+   opacity: 0.5;
+   color: white;
+   border: none;
+   border-radius: 4px;
+   cursor: pointer;
+}
+
+.day5-container .controls button:hover:not(.active) {
+   background-color: #97d0ff;
+}
+.day5-container .controls button.active {
+   border: rgb(191, 225, 231) solid 1px;
+   border-radius: 5px;
+}
+
+#tsparticles {
+   width: 300px;
+   height: 400px;
+}
+.text-conts {
+   width: 100%;
+   display: flex;
+   justify-content: space-evenly;
+   align-items: flex-end;
+   text-shadow: 1px 1px 2px rgba(0, 0, 0, 1);
+}
+.text-conts > div {
+   height: 30px;
+   display: flex;
+   align-items: center;
+}
+.text-conts .text-area {
+   color: white;
+   padding-bottom: 2px;
+}
+.temp-dot {
+   width: 30px;
+   height: 20px;
+   border-radius: 10px;
+   box-shadow: 1px 1px 2px rgba(0, 0, 0, 1);
 }
