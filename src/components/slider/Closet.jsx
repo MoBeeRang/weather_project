@@ -4,8 +4,10 @@ import '../css/Closet.css'
 import 'swiper/css/scrollbar'
 import { Autoplay, Scrollbar } from 'swiper/modules'
 function Closet({ closetResult }) {
+   console.log('closetResult')
+   console.log(closetResult)
    let uniqueClosetResult = []
-   if (closetResult.length > 0) {
+   if (closetResult && closetResult.length > 0) {
       uniqueClosetResult = Array.from(new Map(closetResult.map((item) => [item.title, item])).values()).slice(0, 5)
    }
    return (

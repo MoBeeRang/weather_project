@@ -69,7 +69,6 @@ li:not(:first-child) a:hover:not(.active) {
    background-color: var(--skyhighlight-dark-color);
    color: white;
    border: var(--skyhighlight-dark-color) solid 1px;
-
    border-radius: 5px;
 }
 

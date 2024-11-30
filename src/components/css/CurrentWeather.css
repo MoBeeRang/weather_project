@@ -58,31 +58,6 @@
    background-color: #6e777e;
 }
 
-/* day5 컨트롤 버튼 */
-.day5-container .controls {
-   display: flex;
-   gap: 10px;
-   justify-content: space-evenly;
-}
-
-.day5-container .controls button {
-   padding: 5px 10px;
-   background-color: #6e777e;
-   opacity: 0.5;
-   color: white;
-   border: none;
-   border-radius: 4px;
-   cursor: pointer;
-}
-
-.day5-container .controls button:hover:not(.active) {
-   background-color: #97d0ff;
-}
-.day5-container .controls button.active {
-   border: rgb(191, 225, 231) solid 1px;
-   border-radius: 5px;
-}
-
 #tsparticles {
    width: 300px;
    height: 400px;

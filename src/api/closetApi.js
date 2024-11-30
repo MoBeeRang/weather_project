@@ -7,8 +7,9 @@ import axios from 'axios'
 
 //부계정
 const API_KEY = 'AIzaSyC7Qw-PGMMMihLo04T19hL4P3l8wJB5-XI'
-const CX_PINTEREST = 'f18b8c3faba0d4afe'
+// const CX_PINTEREST = 'f18b8c3faba0d4afe'
 // const CX_COOPANG = 'f18b8c3faba0d4afe'
+const CX_ALL = '91e11416ddc3c4a96'
 const BASE_URL = 'https://www.googleapis.com/customsearch/v1'
 
 const closetApi = axios.create({
@@ -18,7 +19,7 @@ const closetApi = axios.create({
    },
    params: {
       key: API_KEY,
-      cx: CX_PINTEREST,
+      cx: CX_ALL,
       searchType: 'image', // 이미지 검색 활성화
       num: 10,
    },
