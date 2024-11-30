@@ -30,7 +30,7 @@ function Closet({ closetResult }) {
                   <SwiperSlide key={item.title} className="closet-swiper-slide">
                      <div style={{ padding: 20 }}>
                         <img src={item.image.thumbnailLink ? `${item.image.thumbnailLink}` : '/images/clear.png'} alt={item.title} />
-                        <p style={{ fontWeight: 'bold' }}>{item.title}</p>
+                        {/* <p style={{ fontWeight: 'bold' }}>{item.title}</p> */}
                      </div>
                   </SwiperSlide>
                ))}
