@@ -36,7 +36,7 @@ function Home() {
 
    if (weatherLoading || closetLoading) return <p>loading</p>
    if (weatherError) return <p>error:{weatherError}</p>
-   if (closetError && closetError === 'Request failed with status code 403') return <p>error:{closetError}</p>
+   if (closetError && closetError !== 'Request failed with status code 403') return <p>error:{closetError}</p>
 
    return (
       <Wrap>
